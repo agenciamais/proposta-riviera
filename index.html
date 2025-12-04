@@ -59,9 +59,15 @@
             display: inline-block; text-decoration: none;
             border: 1px solid var(--accent-blue); color: var(--accent-blue);
             padding: 12px 30px; border-radius: 50px; font-weight: 600;
-            transition: all 0.3s; margin-bottom: 40px;
+            transition: all 0.3s; margin-bottom: 15px;
         }
         .btn-outline:hover { background: var(--accent-blue); color: white; box-shadow: 0 0 20px rgba(0, 122, 255, 0.4); }
+
+        .temp-warning {
+            font-size: 0.8rem; color: var(--accent-red); font-weight: bold;
+            background: rgba(255, 59, 48, 0.1); padding: 8px 15px; border-radius: 8px;
+            display: inline-block; margin-bottom: 40px;
+        }
 
         /* --- DOMAIN EXPLAINER BOX (DIDÁTICO) --- */
         .domain-box {
@@ -75,10 +81,20 @@
         }
         .domain-box h3 { color: white; margin-bottom: 10px; font-size: 1.1rem; display: flex; align-items: center; gap: 8px; }
         .domain-box p { margin-bottom: 10px; color: #ccc; font-size: 0.9rem; line-height: 1.6; }
-        .domain-option {
-            background: black; padding: 10px 15px; border-radius: 8px;
-            font-family: monospace; color: var(--accent-green); margin-top: 5px; margin-bottom: 15px; display: block; text-align: center;
+        
+        .domain-comparison {
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
         }
+        .domain-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-family: monospace; font-size: 0.85rem; }
+        .domain-row:last-child { margin-bottom: 0; }
+        .domain-row .status { font-size: 1.2rem; }
+        .domain-row .url { word-break: break-all; }
+        .strike-url { text-decoration: line-through; color: #666; }
+        .good-url { color: var(--accent-green); font-weight: bold; }
+
         .domain-highlight {
             background: rgba(0, 210, 106, 0.1);
             border-left: 3px solid var(--accent-green);
@@ -212,6 +228,54 @@
             display: flex; align-items: center; justify-content: center; gap: 5px;
         }
 
+        /* --- ÁREA DE PAGAMENTO (CHECKOUT VISUAL) --- */
+        .payment-area {
+            margin-top: 30px;
+            background: #000;
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid #333;
+        }
+        .payment-title { color: white; font-weight: bold; margin-bottom: 15px; display: block; font-size: 1.1rem; }
+        
+        .payment-option {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #222;
+        }
+        .payment-option:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        
+        .pix-key-box {
+            background: #222;
+            padding: 15px;
+            border-radius: 8px;
+            color: var(--accent-green);
+            font-family: monospace;
+            font-size: 1.1rem;
+            margin: 10px 0;
+            border: 1px dashed var(--accent-green);
+            word-break: break-all;
+        }
+        
+        .btn-copy {
+            background: var(--accent-green); color: black;
+            border: none; padding: 8px 20px; border-radius: 50px;
+            font-weight: bold; cursor: pointer; font-size: 0.9rem;
+        }
+
+        .btn-card-whatsapp {
+            display: block;
+            background: transparent;
+            border: 1px solid var(--accent-blue);
+            color: var(--accent-blue);
+            padding: 15px;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .btn-card-whatsapp:hover { background: rgba(0, 122, 255, 0.1); }
+
         /* NOTIFICAÇÃO FLUTUANTE */
         .notification-toast {
             position: fixed; bottom: 20px; right: 20px;
@@ -253,21 +317,34 @@
         <p>Um projeto desenhado para conectar pais, alunos e escola. Moderno, rápido e pronto para converter matrículas em 2025.</p>
         
         <!-- BOTÃO PARA VER O SITE -->
-        <a href="https://raianafreitas.github.io/site-riviera/" target="_blank" class="btn-outline">
+        <a href="https://agenciamais.github.io/site-riviera-oficial/" target="_blank" class="btn-outline">
             Ver Site ao Vivo 🌐
         </a>
+        
+        <br>
+        <div class="temp-warning">
+            ⚠️ Visualização disponível somente até 18/12
+        </div>
 
-        <!-- BOX EXPLICATIVO DO DOMÍNIO (DIDÁTICO) -->
+        <!-- BOX EXPLICATIVO DO DOMÍNIO -->
         <div class="domain-box">
             <h3>🌐 O que é o Domínio?</h3>
-            <p>Domínio é o endereço "www" oficial que os pais digitam. É como o endereço da rua da sua escola na internet.</p>
-            <p><strong>Atenção:</strong> O endereço <em>www.escolariviera.com.br</em> já está registrado por uma escola de surf. Por isso, sugerimos uma variação oficial disponível:</p>
+            <p>É o endereço oficial do seu site. Hoje você está vendo um link provisório da agência. Ao ativar, ele se torna profissional.</p>
             
-            <span class="domain-option">www.escolarivierafr.com.br</span>
+            <div class="domain-comparison">
+                <div class="domain-row">
+                    <span class="status">❌</span>
+                    <span class="url strike-url">agenciamais.github.io/site-riviera...</span>
+                </div>
+                <div class="domain-row">
+                    <span class="status">✅</span>
+                    <span class="url good-url">www.escolarivierafr.com.br</span>
+                </div>
+            </div>
             
             <div class="domain-highlight">
-                <p style="color: white; font-size: 0.85rem; margin: 0;"><strong>🎁 Presente da Agência:</strong> Fechando nesta proposta, nós pagamos o 1º ano de registro para você.</p>
-                <p style="color: #ccc; font-size: 0.8rem; margin: 5px 0 0 0;">Você só precisará pagar a renovação (R$ 40,00) lá em <strong>Dezembro de 2026</strong> para manter o nome ativo até 2027. O site em si é seu para sempre.</p>
+                <p style="color: white; font-size: 0.85rem; margin: 0;"><strong>🎁 Presente da Agência:</strong> Pagamos o 1º ano de registro.</p>
+                <p style="color: #ccc; font-size: 0.8rem; margin: 5px 0 0 0;">A partir de 04/12/2026, você paga apenas a renovação anual de R$ 40,00 direto ao Registro.br. O site é seu para sempre.</p>
             </div>
         </div>
 
@@ -278,8 +355,8 @@
         <div class="phone-mockup">
             <div class="notch"></div>
             <div class="phone-screen">
-                <!-- IMPORTANTE: Troque o src pela imagem do seu print do site -->
-                <img src="https://placehold.co/300x1500/007AFF/FFFFFF?text=PRINT+DO+SITE+DA+RIVIERA+AQUI" alt="Preview Site" style="width: 100%; display: block;">
+                <!-- IMPORTANTE: Troque o src pela imagem do seu print -->
+                <img src="https://placehold.co/300x1500/007AFF/FFFFFF?text=PRINT+DO+SITE+AQUI" alt="Preview Site" style="width: 100%; display: block;">
             </div>
         </div>
     </div>
@@ -297,7 +374,7 @@
             </div>
             <!-- Modelo Bom -->
             <div class="comp-card comp-good">
-                <div class="tag">SUA PROPOSTA</div>
+                <div class="tag">NOSSA PROPOSTA</div>
                 <h3>Modelo Agência Mais</h3>
                 <p>Site com código próprio. Sem mensalidade de plataforma.</p>
                 <div class="price">R$ 0,00 <small>/mês</small></div>
@@ -306,7 +383,7 @@
         </div>
     </div>
 
-    <!-- BLOCO EXPLICATIVO (ZERO MENSALIDADE) -->
+    <!-- BLOCO EXPLICATIVO (SITE SEU PARA SEMPRE) -->
     <div class="ownership-box">
         <h3>🚫 0% Mensalidade | 100% Seu</h3>
         <p>Ao contrário de plataformas alugadas onde você paga todo mês para o site não sair do ar, <strong>este site é um bem da escola</strong>. O código é seu para sempre. Ele não "expira" e não será tirado do ar se você parar de pagar algo (exceto a taxa anual do domínio que é externa). Você tem total liberdade.</p>
@@ -365,27 +442,52 @@
 
             <span class="total-strike">Investimento Total: R$ 3.950,00</span>
             
-            <div style="margin-top: 10px;">
+            <div style="margin-top: 10px; margin-bottom: 30px;">
                 <div class="final-price">R$ 1.257<small>,00</small></div>
-                <p style="font-size: 0.9rem; color: #fff; font-weight: bold;">Pagamento único (Pix ou Cartão).</p>
-                
-                <!-- NOTA DO DOMÍNIO CLARA E DIRETA -->
+                <p style="font-size: 0.9rem; color: #888;">Pagamento único.</p>
                 <div class="domain-note">
-                    ✅ <strong>1º Ano de Domínio (www) GRÁTIS</strong><br>
-                    A partir de 04/12/2026, você pagará apenas a taxa de manutenção de nome de R$ 40,00/ano (boleto direto do Registro.br) para manter o endereço no ar até 2027. Enviaremos um PDF com todas as instruções para você guardar!
+                    ✅ <strong>1º Ano de Domínio GRÁTIS</strong><br>
+                    A partir de 04/12/2026, você pagará apenas a taxa de manutenção de R$ 40,00/ano (boleto Registro.br) para manter o endereço no ar até 2027. Enviaremos um PDF com instruções.
                 </div>
             </div>
 
-            <!-- BOTÃO DE PAGAMENTO -->
-            <!-- COLOQUE SEU LINK DE PAGAMENTO AQUI NO HREF -->
-            <a href="#" class="btn-pay">
-                GARANTIR ESSA CONDIÇÃO 💳
+            <!-- BOTÃO QUE LEVA PARA O PAGAMENTO -->
+            <a href="#pagamento" class="btn-pay">
+                ATIVAR MEU SITE AGORA 👇
             </a>
-            
-            <span class="pix-badge">Compra Segura</span>
 
             <div class="guarantee">
                 🔒 Satisfação Garantida Agência Mais
+            </div>
+        </div>
+    </section>
+
+    <!-- ÁREA DE PAGAMENTO (CHECKOUT VISUAL) -->
+    <section id="pagamento" style="padding: 40px 20px; max-width: 600px; margin: 0 auto;">
+        <div class="payment-area">
+            <span class="payment-title">1. Pagamento via PIX (Aprovado na hora)</span>
+            <div class="payment-option">
+                <p style="color:#ccc; font-size: 0.9rem;">Copie a chave abaixo e pague no app do seu banco:</p>
+                <div class="pix-key-box" id="pixKey">082.550.155-58</div>
+                <button class="btn-copy" onclick="copyPix()">Copiar Chave CPF</button>
+                <p style="color:#888; font-size: 0.8rem; margin-top: 10px;">Banco: [Seu Banco] | Nome: Raiana Freitas</p>
+            </div>
+
+            <span class="payment-title" style="margin-top: 30px;">2. Pagamento via Cartão</span>
+            <div class="payment-option">
+                <p style="color:#ccc; font-size: 0.9rem; margin-bottom: 15px;">Deseja parcelar? Fale conosco para simular as parcelas ou enviar o comprovante.</p>
+                
+                <!-- TEXTO NOVO SUGERIDO -->
+                <div style="border-left: 3px solid var(--accent-blue); padding-left: 15px; margin-bottom: 20px;">
+                    <p style="color:#aaa; font-size: 0.85rem; line-height: 1.5;">
+                        <strong>💡 Dica de Economia:</strong> Se preferir, você pode passar o valor do site (R$ 1.257,00) na própria maquininha da escola e parcelar como desejar, e depois transferir o valor líquido via Pix na chave acima.
+                        <br>Isso evita as taxas de juros de links de pagamento externos, pois, nossos links externos ultrapassam o valor do site para receber o valor exato que ele vale.
+                    </p>
+                </div>
+
+                <a href="https://wa.me/5571983934660?text=Oi,%20quero%20pagar%20o%20site%20no%20cart%C3%A3o" class="btn-card-whatsapp">
+                    💳 Falar sobre Cartão no WhatsApp
+                </a>
             </div>
         </div>
     </section>
@@ -400,8 +502,17 @@
     </div>
 
     <script>
+        // Notificação
         setTimeout(() => { document.getElementById('notification').classList.add('show'); }, 2000);
         setTimeout(() => { document.getElementById('notification').classList.remove('show'); }, 8000);
+
+        // Função Copiar Pix
+        function copyPix() {
+            const key = document.getElementById('pixKey').innerText;
+            navigator.clipboard.writeText(key).then(() => {
+                alert("Chave CPF copiada! Agora é só colar no seu banco.");
+            });
+        }
     </script>
 
 </body>
