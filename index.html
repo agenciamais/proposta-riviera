@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proposta Exclusiva - Escola Riviera | Agência Mais</title>
+    <title>Proposta Comercial Exclusiva | Agência Mais</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -12,11 +12,11 @@
         :root {
             --bg-dark: #0a0a0a;
             --bg-card: #121212;
-            --accent-red: #ff3b30; /* Vermelho Alvo */
-            --accent-glow: rgba(255, 59, 48, 0.3);
+            --accent-red: #ff3b30; 
+            --accent-green: #00d26a;
+            --accent-blue: #007AFF;
             --text-white: #ffffff;
             --text-gray: #a1a1aa;
-            --success: #00d26a;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -29,254 +29,113 @@
             overflow-x: hidden;
         }
 
-        /* --- HEADER / NAV --- */
+        /* --- HEADER --- */
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 5%; border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .logo { font-weight: 800; font-size: 1.2rem; display: flex; align-items: center; gap: 10px; letter-spacing: -0.5px; }
+        .target-icon { width: 20px; height: 20px; border: 3px solid var(--accent-red); border-radius: 50%; position: relative; }
+        .target-icon::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 6px; height: 6px; background: var(--accent-red); border-radius: 50%; }
+        
+        .validade-tag {
+            background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+            color: var(--text-gray); padding: 5px 12px; border-radius: 4px; font-size: 0.75rem;
         }
 
-        .logo {
-            font-weight: 800;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            letter-spacing: -0.5px;
-        }
-
-        .target-icon {
-            width: 20px;
-            height: 20px;
-            border: 3px solid var(--accent-red);
-            border-radius: 50%;
-            position: relative;
-        }
-        .target-icon::after {
-            content: '';
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            width: 6px; height: 6px;
-            background: var(--accent-red);
-            border-radius: 50%;
-        }
-
-        .tag-black-friday {
-            background: linear-gradient(90deg, #ff3b30, #ff9500);
-            color: white;
-            padding: 5px 12px;
-            border-radius: 50px;
-            font-size: 0.7rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(255, 59, 48, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 59, 48, 0); }
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            text-align: center;
-            padding: 80px 20px 40px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
+        /* --- HERO --- */
+        .hero { text-align: center; padding: 60px 20px 40px; max-width: 800px; margin: 0 auto; }
         .hero h1 {
-            font-size: 3.5rem;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            background: linear-gradient(180deg, #fff, #888);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 3rem; line-height: 1.1; margin-bottom: 20px;
+            background: linear-gradient(180deg, #fff, #888); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
-
         .hero h1 span {
-            background: linear-gradient(90deg, var(--accent-red), #ff9500);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            background: linear-gradient(90deg, var(--accent-red), #ff9500); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
+        .hero p { font-size: 1.1rem; color: var(--text-gray); margin-bottom: 30px; }
 
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-gray);
-            margin-bottom: 40px;
+        /* BOTÃO VER SITE (HERO) */
+        .btn-outline {
+            display: inline-block; text-decoration: none;
+            border: 1px solid var(--accent-blue); color: var(--accent-blue);
+            padding: 12px 30px; border-radius: 50px; font-weight: 600;
+            transition: all 0.3s; margin-bottom: 40px;
         }
+        .btn-outline:hover { background: var(--accent-blue); color: white; box-shadow: 0 0 20px rgba(0, 122, 255, 0.4); }
 
-        /* --- MOCKUP DO CELULAR (CSS PURO) --- */
-        .showcase {
-            display: flex;
-            justify-content: center;
-            perspective: 1000px;
-            margin-bottom: 80px;
-        }
-
+        /* --- MOCKUP --- */
+        .showcase { display: flex; justify-content: center; perspective: 1000px; margin-bottom: 60px; }
         .phone-mockup {
-            width: 300px;
-            height: 600px;
-            background: #000;
-            border-radius: 40px;
-            border: 8px solid #333;
-            position: relative;
-            box-shadow: 0 50px 100px -20px rgba(0,0,0,0.5), 0 0 30px rgba(255, 59, 48, 0.1);
-            overflow: hidden;
-            transform: rotateY(-10deg) rotateX(10deg);
-            transition: transform 0.5s ease;
+            width: 280px; height: 550px; background: #000; border-radius: 40px; border: 8px solid #333;
+            position: relative; box-shadow: 0 50px 100px -20px rgba(0,0,0,0.5); overflow: hidden;
+            transform: rotateY(-5deg); transition: transform 0.5s ease;
         }
-
-        .phone-mockup:hover {
-            transform: rotateY(0) rotateX(0);
-        }
-
-        /* O Site da Riviera dentro do mockup (iFrame) */
-        .phone-screen {
-            width: 100%;
-            height: 100%;
-            background: white;
-            overflow-y: scroll;
-            /* Esconde barra de rolagem */
-            scrollbar-width: none; 
-        }
+        .phone-mockup:hover { transform: rotateY(0); }
+        .phone-screen { width: 100%; height: 100%; background: white; overflow-y: scroll; scrollbar-width: none; }
         .phone-screen::-webkit-scrollbar { display: none; }
+        .notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100px; height: 20px; background: #333; border-radius: 0 0 10px 10px; z-index: 10; }
 
-        /* Notch do iPhone */
-        .notch {
-            position: absolute;
-            top: 0; left: 50%;
-            transform: translateX(-50%);
-            width: 120px; height: 25px;
-            background: #333;
-            border-radius: 0 0 15px 15px;
-            z-index: 10;
-        }
-
-        /* --- STACK DE VALOR (LISTA) --- */
+        /* --- STACK DE VALOR --- */
         .value-stack {
-            max-width: 900px;
-            margin: 0 auto 80px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 0 20px;
+            max-width: 900px; margin: 0 auto 60px; display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 0 20px;
         }
-
-        .feature-card {
-            background: var(--bg-card);
-            padding: 30px;
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .feature-icon {
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-
-        .feature-card h3 { margin-bottom: 10px; }
+        .feature-card { background: var(--bg-card); padding: 25px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); }
+        .feature-card h3 { margin-bottom: 10px; font-size: 1.1rem; color: white; }
         .feature-card p { color: var(--text-gray); font-size: 0.9rem; }
+        .icon { font-size: 1.5rem; margin-bottom: 10px; display: block; }
 
-        /* --- PREÇO GURU --- */
+        /* --- EXPLICAÇÃO "SITE SEU" --- */
+        .ownership-box {
+            max-width: 700px; margin: 0 auto 80px; padding: 30px;
+            background: rgba(0, 210, 106, 0.05); border: 1px solid rgba(0, 210, 106, 0.2);
+            border-radius: 15px; text-align: center;
+        }
+        .ownership-box h3 { color: var(--success); margin-bottom: 10px; }
+        .ownership-box p { font-size: 0.95rem; color: #ccc; }
+
+        /* --- PREÇO --- */
         .pricing-section {
             background: linear-gradient(180deg, var(--bg-dark) 0%, #1a0505 100%);
-            padding: 100px 20px;
-            text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 80px 20px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05);
         }
-
         .price-box {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid var(--accent-red);
-            border-radius: 30px;
-            padding: 50px;
-            max-width: 500px;
-            margin: 0 auto;
-            position: relative;
+            background: rgba(255,255,255,0.03); border: 1px solid var(--accent-red);
+            border-radius: 30px; padding: 40px; max-width: 500px; margin: 0 auto; position: relative;
         }
+        .alert-badge {
+            position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+            background: var(--accent-red); color: white; padding: 5px 20px;
+            font-weight: 800; font-size: 0.8rem; border-radius: 20px; text-transform: uppercase;
+            box-shadow: 0 0 20px rgba(255, 59, 48, 0.4); animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.8; } 100% { opacity: 1; } }
 
-        .price-box::before {
-            content: 'OFERTA BLACK EXTENDED';
-            position: absolute;
-            top: -15px; left: 50%;
-            transform: translateX(-50%);
-            background: var(--accent-red);
-            color: white;
-            padding: 5px 20px;
-            font-weight: 800;
-            font-size: 0.8rem;
-            border-radius: 20px;
-        }
+        .deadline-text { color: var(--accent-red); font-weight: bold; margin-bottom: 20px; display: block; font-size: 0.9rem; }
 
-        .list-item {
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding: 15px 0;
-            color: var(--text-gray);
-            font-size: 0.95rem;
-        }
-        .list-item span:last-child { color: var(--text-white); font-weight: 600; }
+        .list-item { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 12px 0; color: var(--text-gray); font-size: 0.9rem; }
+        .list-item span:last-child { color: white; font-weight: 600; }
         .list-item.bonus { color: var(--success); }
 
-        .total-strike {
-            text-decoration: line-through;
-            color: #555;
-            font-size: 1.2rem;
-            margin-top: 30px;
-            display: block;
-        }
+        .total-strike { text-decoration: line-through; color: #555; font-size: 1.1rem; margin-top: 30px; display: block; }
+        .final-price { font-size: 3.5rem; font-weight: 800; color: white; line-height: 1; margin-bottom: 5px; }
+        .final-price small { font-size: 1.2rem; color: var(--text-gray); font-weight: 400; }
 
-        .final-price {
-            font-size: 4rem;
-            font-weight: 800;
-            color: white;
-            line-height: 1;
-            margin-bottom: 10px;
+        /* BOTÃO PAGAMENTO */
+        .btn-pay {
+            display: block; background: var(--success); color: #000; text-decoration: none;
+            padding: 18px; border-radius: 12px; font-weight: 800; font-size: 1.1rem;
+            margin-top: 20px; width: 100%; transition: transform 0.2s;
+            box-shadow: 0 10px 30px rgba(0, 210, 106, 0.2);
         }
-        .final-price small { font-size: 1.5rem; color: var(--text-gray); font-weight: 400; }
+        .btn-pay:hover { transform: translateY(-3px); background: #00e676; }
 
-        /* BOTÃO DE COMPRA */
-        .cta-button {
-            display: inline-block;
-            background: var(--accent-red);
-            color: white;
-            text-decoration: none;
-            padding: 20px 40px;
-            border-radius: 12px;
-            font-weight: 800;
-            font-size: 1.2rem;
-            margin-top: 30px;
-            width: 100%;
-            transition: transform 0.2s;
-            box-shadow: 0 10px 30px rgba(255, 59, 48, 0.3);
-        }
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 40px rgba(255, 59, 48, 0.5);
-        }
-
-        .guarantee {
-            margin-top: 20px;
-            font-size: 0.8rem;
-            color: var(--text-gray);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-        }
+        .pix-badge { display: inline-block; background: #333; color: #ccc; padding: 4px 10px; border-radius: 4px; font-size: 0.7rem; margin-top: 10px; }
 
         /* --- MOBILE --- */
         @media(max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .phone-mockup { width: 280px; height: 550px; }
-            .price-box { padding: 30px; }
+            .hero h1 { font-size: 2.2rem; }
+            .phone-mockup { width: 260px; height: 500px; }
         }
     </style>
 </head>
@@ -287,83 +146,91 @@
             <div class="target-icon"></div>
             AGÊNCIA MAIS
         </div>
-        <div class="tag-black-friday">Condição Dezembro</div>
+        <div class="validade-tag">Proposta #0842</div>
     </header>
 
     <section class="hero">
-        <h1>O Novo Site da <br><span>Escola Riviera</span> está pronto.</h1>
-        <p>Design Premium. Tecnologia Mobile First. Pronto para converter visitantes em matrículas em 2025.</p>
+        <h1>Proposta Comercial Exclusiva<br><span>Escola Riviera</span></h1>
+        <p>Um projeto desenhado para conectar pais, alunos e escola. Moderno, rápido e pronto para converter matrículas em 2025.</p>
+        
+        <a href="https://raianafreitas.github.io/site-riviera/" target="_blank" class="btn-outline">
+            Ver Site ao Vivo 🌐
+        </a>
     </section>
 
-    <!-- MOCKUP DO SITE -->
     <div class="showcase">
         <div class="phone-mockup">
             <div class="notch"></div>
             <div class="phone-screen">
-                <!-- AQUI NÓS USAMOS UMA IMAGEM DO SITE.
-                     DICA: TIRE UM PRINT LONGO DO SITE NO CELULAR E SUBSTITUA O SRC ABAIXO.
-                     POR ENQUANTO, USEI UM PLACEHOLDER AZUL PARA SIMULAR. -->
-                <img src="https://placehold.co/300x1500/007AFF/FFFFFF?text=PRINT+DO+SITE+DA+RIVIERA+AQUI" alt="Site Riviera Mobile" style="width: 100%; display: block;">
+                <img src="https://placehold.co/300x1500/007AFF/FFFFFF?text=PRINT+SITE+AQUI" alt="Preview Site" style="width: 100%; display: block;">
             </div>
         </div>
     </div>
 
-    <!-- STACK DE VALOR -->
+    <div class="ownership-box">
+        <h3>✅ O Site é Seu Para Sempre</h3>
+        <p>Diferente de plataformas como Wix ou Shopify, aqui você não paga mensalidade de aluguel. O código é seu. O site não sai do ar e você tem liberdade total sobre ele. Um ativo digital definitivo para a escola.</p>
+    </div>
+
     <div class="value-stack">
         <div class="feature-card">
-            <div class="feature-icon">📱</div>
-            <h3>Design Mobile First</h3>
-            <p>Mais de 80% dos pais acessam pelo celular. Seu site foi desenhado para ser perfeito na palma da mão, estilo app nativo.</p>
+            <span class="icon">🚀</span>
+            <h3>Site Completo (5 Páginas)</h3>
+            <p>Início, Sobre, Níveis, Matrículas e Contato. Tudo otimizado para celular e computador.</p>
         </div>
         <div class="feature-card">
-            <div class="feature-icon">📍</div>
-            <h3>SEO Local Lauro de Freitas</h3>
-            <p>Otimização para buscas locais. Quando procurarem "Escola em Lauro de Freitas", seu site estará preparado para aparecer.</p>
+            <span class="icon">📸</span>
+            <h3>Galeria de Eventos</h3>
+            <p>Sistema integrado com Google Fotos para hospedar álbuns ilimitados de formaturas e festas sem pesar o site.</p>
         </div>
         <div class="feature-card">
-            <div class="feature-icon">📸</div>
-            <h3>Gestão de Memórias</h3>
-            <p>Sistema inteligente de galerias usando Google Fotos. Sem limite de espaço e fácil atualização mensal.</p>
+            <span class="icon">🔍</span>
+            <h3>SEO Técnico Local</h3>
+            <p>Configuração de palavras-chave ("Escola em Lauro de Freitas") no código para ajudar o Google a encontrar vocês.</p>
+        </div>
+        <div class="feature-card">
+            <span class="icon">🛠️</span>
+            <h3>Suporte Mensal</h3>
+            <p>Incluso 2 atualizações por mês (ex: subir fotos novas ou mudar textos) sem custo extra.</p>
         </div>
     </div>
 
-    <!-- SEÇÃO DE PREÇO (O GURU DE MARKETING) -->
     <section class="pricing-section">
         <div class="price-box">
+            <div class="alert-badge">Condição Exclusiva</div>
             
+            <span class="deadline-text">⚠️ Válido de 04/12/2025 até 18/12/2025</span>
+
             <div class="list-item">
-                <span>Desenvolvimento UI/UX Design</span>
-                <span>R$ 1.500,00</span>
-            </div>
-            <div class="list-item">
-                <span>Programação Front-End (Clean Code)</span>
-                <span>R$ 1.200,00</span>
+                <span>Desenvolvimento Web (Design + Código)</span>
+                <span>R$ 2.200,00</span>
             </div>
             <div class="list-item bonus">
-                <span>BÔNUS: Configuração SEO Local</span>
+                <span>BÔNUS: Otimização SEO</span>
                 <span>R$ 800,00</span>
             </div>
             <div class="list-item bonus">
-                <span>BÔNUS: Setup Google Fotos</span>
+                <span>BÔNUS: Sistema de Galerias</span>
                 <span>R$ 400,00</span>
             </div>
             
             <div style="margin-top: 30px; border-top: 1px dashed #333;"></div>
 
-            <span class="total-strike">Valor Total: R$ 3.900,00</span>
+            <span class="total-strike">Investimento Total: R$ 3.400,00</span>
             
             <div style="margin-top: 10px;">
-                <p style="color: var(--accent-red); font-weight: bold; margin-bottom: 5px;">OFERTA ESPECIAL DEZEMBRO</p>
                 <div class="final-price">R$ 1.200<small>,00</small></div>
-                <p style="font-size: 0.9rem; color: #888;">Pagamento único. O site é seu para sempre.</p>
+                <p style="font-size: 0.9rem; color: #888;">À vista no Pix ou em até 12x no cartão.</p>
             </div>
 
-            <a href="https://wa.me/SEUNUMEROAQUI" class="cta-button">
-                QUERO ATIVAR MEU SITE
+            <a href="#" class="btn-pay">
+                GARANTIR ESSA CONDIÇÃO 💳
             </a>
+            
+            <span class="pix-badge">Pagamento Seguro</span>
 
             <div class="guarantee">
-                🔒 Entrega Imediata + Suporte 30 dias
+                🔒 Satisfação Garantida Agência Mais
             </div>
         </div>
     </section>
