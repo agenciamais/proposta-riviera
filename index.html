@@ -39,7 +39,7 @@
         .target-icon::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 6px; height: 6px; background: var(--accent-red); border-radius: 50%; }
         
         .validade-tag {
-            background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
             color: var(--text-gray); padding: 5px 12px; border-radius: 4px; font-size: 0.75rem;
         }
 
@@ -133,11 +133,34 @@
 
         .pix-badge { display: inline-block; background: #333; color: #ccc; padding: 4px 10px; border-radius: 4px; font-size: 0.7rem; margin-top: 10px; }
 
+        .guarantee {
+            margin-top: 20px; font-size: 0.8rem; color: var(--text-gray);
+            display: flex; align-items: center; justify-content: center; gap: 5px;
+        }
+
+        /* --- NOTIFICAÇÃO FLUTUANTE --- */
+        .notification-toast {
+            position: fixed; bottom: 20px; right: 20px;
+            background: rgba(30, 30, 30, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 4px solid var(--accent-green);
+            padding: 15px 20px; border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            color: white; font-size: 0.85rem;
+            display: flex; align-items: center; gap: 12px;
+            transform: translateY(100px); opacity: 0;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            z-index: 9999; max-width: 300px;
+        }
+        .notification-toast.show { transform: translateY(0); opacity: 1; }
+        .notification-icon { font-size: 1.2rem; }
+
         /* --- MOBILE --- */
         @media(max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
             .phone-mockup { width: 260px; height: 500px; }
             .value-stack { grid-template-columns: 1fr; }
+            .notification-toast { left: 20px; right: 20px; bottom: 20px; max-width: none; }
         }
     </style>
 </head>
@@ -164,7 +187,7 @@
         <div class="phone-mockup">
             <div class="notch"></div>
             <div class="phone-screen">
-                <img src="https://placehold.co/300x1500/007AFF/FFFFFF?text=PRINT+DO+SITE+DA+RIVIERA+AQUI" alt="Preview Site" style="width: 100%; display: block;">
+                <img src="https://placehold.co/300x1500/007AFF/FFFFFF?text=PRINT+SITE+AQUI" alt="Preview Site" style="width: 100%; display: block;">
             </div>
         </div>
     </div>
@@ -240,6 +263,26 @@
             </div>
         </div>
     </section>
+
+    <div id="notification" class="notification-toast">
+        <span class="notification-icon">🔔</span>
+        <div>
+            <strong style="display:block; font-size: 0.9rem;">Acesso Rastreado</strong>
+            Visualização da Proposta #0842 iniciada.
+        </div>
+    </div>
+
+    <script>
+        // Script simples para mostrar a notificação após 2 segundos
+        setTimeout(() => {
+            document.getElementById('notification').classList.add('show');
+        }, 2000);
+        
+        // Esconde depois de 6 segundos
+        setTimeout(() => {
+            document.getElementById('notification').classList.remove('show');
+        }, 8000);
+    </script>
 
 </body>
 </html>
