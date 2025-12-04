@@ -63,7 +63,7 @@
         }
         .btn-outline:hover { background: var(--accent-blue); color: white; box-shadow: 0 0 20px rgba(0, 122, 255, 0.4); }
 
-        /* --- DOMAIN EXPLAINER BOX --- */
+        /* --- DOMAIN EXPLAINER BOX (DIDÁTICO) --- */
         .domain-box {
             background: rgba(255, 255, 255, 0.05);
             border: 1px dashed var(--text-gray);
@@ -74,10 +74,17 @@
             font-size: 0.95rem;
         }
         .domain-box h3 { color: white; margin-bottom: 10px; font-size: 1.1rem; display: flex; align-items: center; gap: 8px; }
-        .domain-box p { margin-bottom: 10px; color: #ccc; font-size: 0.9rem; }
+        .domain-box p { margin-bottom: 10px; color: #ccc; font-size: 0.9rem; line-height: 1.6; }
         .domain-option {
             background: black; padding: 10px 15px; border-radius: 8px;
-            font-family: monospace; color: var(--accent-green); margin-top: 10px; display: block; text-align: center;
+            font-family: monospace; color: var(--accent-green); margin-top: 5px; margin-bottom: 15px; display: block; text-align: center;
+        }
+        .domain-highlight {
+            background: rgba(0, 210, 106, 0.1);
+            border-left: 3px solid var(--accent-green);
+            padding: 10px;
+            margin-top: 15px;
+            border-radius: 0 8px 8px 0;
         }
 
         /* --- MOCKUP --- */
@@ -182,11 +189,18 @@
         .final-price { font-size: 3.5rem; font-weight: 800; color: white; line-height: 1; margin-bottom: 5px; }
         .final-price small { font-size: 1.2rem; color: var(--text-gray); font-weight: 400; }
 
+        /* Aviso do Domínio no Preço */
+        .domain-note {
+            font-size: 0.75rem; color: #aaa; margin-top: 5px; margin-bottom: 20px;
+            line-height: 1.4; border: 1px dashed #333; padding: 15px; border-radius: 8px; background: rgba(0,0,0,0.3); text-align: left;
+        }
+        .domain-note strong { color: var(--success); }
+
         /* BOTÃO PAGAMENTO */
         .btn-pay {
             display: block; background: var(--success); color: #000; text-decoration: none;
             padding: 18px; border-radius: 12px; font-weight: 800; font-size: 1.1rem;
-            margin-top: 20px; width: 100%; transition: transform 0.2s;
+            margin-top: 10px; width: 100%; transition: transform 0.2s;
             box-shadow: 0 10px 30px rgba(0, 210, 106, 0.2);
         }
         .btn-pay:hover { transform: translateY(-3px); background: #00e676; }
@@ -243,14 +257,18 @@
             Ver Site ao Vivo 🌐
         </a>
 
-        <!-- BOX EXPLICATIVO DO DOMÍNIO -->
+        <!-- BOX EXPLICATIVO DO DOMÍNIO (DIDÁTICO) -->
         <div class="domain-box">
             <h3>🌐 O que é o Domínio?</h3>
-            <p>Domínio é o nome oficial do seu site (o endereço que os pais digitam, como "www.escola...").</p>
-            <p>O endereço <em>escolariviera.com.br</em> já está em uso por outra escola.</p>
-            <p style="margin-top: 15px; color: white;">Sugestão disponível para registro:</p>
+            <p>Domínio é o endereço "www" oficial que os pais digitam. É como o endereço da rua da sua escola na internet.</p>
+            <p><strong>Atenção:</strong> O endereço <em>www.escolariviera.com.br</em> já está registrado por uma escola de surf. Por isso, sugerimos uma variação oficial disponível:</p>
+            
             <span class="domain-option">www.escolarivierafr.com.br</span>
-            <p style="font-size: 0.8rem; margin-top: 10px;">Podemos definir outro nome juntos pelo WhatsApp.</p>
+            
+            <div class="domain-highlight">
+                <p style="color: white; font-size: 0.85rem; margin: 0;"><strong>🎁 Presente da Agência:</strong> Fechando nesta proposta, nós pagamos o 1º ano de registro para você.</p>
+                <p style="color: #ccc; font-size: 0.8rem; margin: 5px 0 0 0;">Você só precisará pagar a renovação (R$ 40,00) lá em <strong>Dezembro de 2026</strong> para manter o nome ativo até 2027. O site em si é seu para sempre.</p>
+            </div>
         </div>
 
     </section>
@@ -288,7 +306,7 @@
         </div>
     </div>
 
-    <!-- BLOCO EXPLICATIVO (SITE SEU PARA SEMPRE) -->
+    <!-- BLOCO EXPLICATIVO (ZERO MENSALIDADE) -->
     <div class="ownership-box">
         <h3>🚫 0% Mensalidade | 100% Seu</h3>
         <p>Ao contrário de plataformas alugadas onde você paga todo mês para o site não sair do ar, <strong>este site é um bem da escola</strong>. O código é seu para sempre. Ele não "expira" e não será tirado do ar se você parar de pagar algo (exceto a taxa anual do domínio que é externa). Você tem total liberdade.</p>
@@ -340,16 +358,22 @@
             </div>
             <div class="list-item bonus">
                 <span>BÔNUS: Galeria Google Fotos</span>
-                <span>R$ 400,00</span>
+                <span>R$ 450,00</span>
             </div>
             
             <div style="margin-top: 30px; border-top: 1px dashed #333;"></div>
 
-            <span class="total-strike">Investimento Total: R$ 3.900,00</span>
+            <span class="total-strike">Investimento Total: R$ 3.950,00</span>
             
             <div style="margin-top: 10px;">
-                <div class="final-price">R$ 1.200<small>,00</small></div>
-                <p style="font-size: 0.9rem; color: #888;">Pagamento único (Pix ou Cartão). O site é seu para sempre.</p>
+                <div class="final-price">R$ 1.257<small>,00</small></div>
+                <p style="font-size: 0.9rem; color: #fff; font-weight: bold;">Pagamento único (Pix ou Cartão).</p>
+                
+                <!-- NOTA DO DOMÍNIO CLARA E DIRETA -->
+                <div class="domain-note">
+                    ✅ <strong>1º Ano de Domínio (www) GRÁTIS</strong><br>
+                    A partir de 04/12/2026, você pagará apenas a taxa de manutenção de nome de R$ 40,00/ano (boleto direto do Registro.br) para manter o endereço no ar até 2027. Enviaremos um PDF com todas as instruções para você guardar!
+                </div>
             </div>
 
             <!-- BOTÃO DE PAGAMENTO -->
